@@ -1,3 +1,9 @@
-post '/gossips/new/' do
-  Gossip.new(les_entrées_du_gossip).save
+require 'csv'
+class Gossip
+    def save
+        CSV.open("./db/gossip.csv", "ab") do |csv|
+            csv << ["Mon super auteur", "Ma super description"]
+
+    end
+end
 end
