@@ -1,7 +1,11 @@
+require 'rubygems'
 require 'sinatra'
-get '/hello' do
-  '<h1> Hello world!</h1>'
-end
-get '/bonjour' do
-  '<h1>Bonjour, monde !</h1>'
-end
+
+#get '/' do
+#  "Hello World"
+#end
+get '/gossips/post/:id'do
+  matches "GET /gossips/foo" and "GET /gossips/bar"
+  params['id'] is 'foo' or 'bar'
+  "Hello #{params[:id]}!"
+  end
